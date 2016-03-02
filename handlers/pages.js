@@ -11,7 +11,8 @@ exports.home = function (request, reply) {
         }
 
         reply.view('index', {
-            recipes: payload
+            recipes: payload,
+            user: request.yar.get('user')
         });
     });
 
@@ -49,7 +50,8 @@ exports.viewRecipe = function (request, reply) {
         }
 
         reply.view('recipe', {
-            recipe: payload
+            recipe: payload,
+            user: request.yar.get('user')
         });
     });
 };
@@ -57,4 +59,11 @@ exports.viewRecipe = function (request, reply) {
 exports.login = function (request, reply) {
 
     reply.view('login');
+};
+
+exports.createRecipe = function (request, reply) {
+
+    reply.view('create', {
+        user: request.yar.get('user')
+    });
 };

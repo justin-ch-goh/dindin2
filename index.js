@@ -5,7 +5,7 @@ server.connection({ port: 3000 });
 
 server.bind({
     apiBaseUrl: 'http://localhost:3000/api',
-    webBaseUrl: 'htpp://localhost:3000'
+    webBaseUrl: 'http://localhost:3000'
 });
 
 server.register([
